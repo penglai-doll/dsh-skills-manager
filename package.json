@@ -1,0 +1,30 @@
+{
+  "name": "dsh-skills-manager",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Skills management tab for the Web Plugins settings: manage agent skills at the official hierarchy levels — global (host layer, <dshHome>/skills + <agentsHome>/skills), preset (<preset>/skills), and agent (live-agent runtime layer) — through a same-origin /skills-manager JSON API.",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime"
+      ],
+      "platform": "web"
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1",
+    "@deepseek-ai/dsh-agent": "^0.1.0-rc.6",
+    "@deepseek-ai/dsh-agent-presets": "^0.1.0-rc.6",
+    "@deepseek-ai/dsh-cordis-host-runner": "^0.1.0-rc.6",
+    "@deepseek-ai/dsh-host-webserver": "^0.1.0-rc.6",
+    "@deepseek-ai/dsh-skill": "^0.1.0-rc.6"
+  },
+  "license": "MIT"
+}
